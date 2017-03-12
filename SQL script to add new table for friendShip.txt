@@ -1,0 +1,22 @@
+
+/*
+	status :to indicate the status of the friend request
+			0 pending
+			1 accepted
+			2 declined
+	action_player_id : the id of the player that initated the request		
+*/
+
+DROP TABLE IF EXISTS `friendship`;
+CREATE TABLE IF NOT EXISTS `friendship` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+  `player_one_id` int(11) NOT NULL,
+  `player_two_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `action_player_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+INSERT INTO `friendship` (`player_one_id`, `player_two_id`, `status`, `action_player_id`) VALUES
+( 1, 2, 0, 1);
